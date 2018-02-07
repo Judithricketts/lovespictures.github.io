@@ -1,0 +1,245 @@
+//*** COLORS ***/
+// $blue1: #264868
+// $blue2: #3E6386
+// $green1:#b4b342 rgba(180, 179, 66,0.5)
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body {
+	background: url(http://upload.wikimedia.org/wikipedia/commons/d/dd/Muybridge_race_horse_animated.gif)repeat center center fixed;
+	-webkit-background-size: cover;
+
+	// background: linear-gradient(to bottom, $blue2, $blue1);
+	// color: $green1;
+}
+$blue1: #b4b342;
+$blue2: #b4b342;
+$green1: #6e6e6e; //*** strapline ***/
+
+//*** VARIABLES ***/
+$element-height: 40px;
+$transition150: all 150ms ease-in-out;
+$transition300: all 300ms ease-in-out;
+$screen-mobile: "only screen and (max-width : 767px)";
+$rollover: "&.active, &:active, &:hover, &:focus";
+
+//*** MIXINS ***/
+@mixin border-radius($b-rad...) {
+	-ms-border-radius: $b-rad;
+	-moz-border-radius: $b-rad;
+	-o-border-radius: $b-rad;
+	-webkit-border-radius: $b-rad;
+	-khtml-border-radius: $b-rad;
+	border-radius: $b-rad;
+}
+@mixin transition($transition...) {
+	-ms-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	-webkit-transition: $transition;
+	-khtml-transition: $transition;
+	transition: $transition;
+}
+@mixin transform($transY...) {
+	-ms-transform: translateY(-$transY);
+	-moz-transform: translateY(-$transY);
+	-o-transform: translateY(-$transY);
+	-webkit-transform: translateY(-$transY);
+	-khtml-transform: translateY(-$transY);
+	transform: translateY(-$transY);
+}
+@mixin transform-all($transform...) {
+	-ms-transform: $transform;
+	-moz-transform: $transform;
+	-o-transform: $transform;
+	-webkit-transform: $transform;
+	-khtml-transform: $transform;
+	transform: $transform;
+}
+
+//*** FLEXBOX MIXINS ***/
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -webkit-flexbox;
+	display: -moz-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+@mixin inline-flex() {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+@mixin align-items($align...) {
+	-webkit-align-items: $align;
+	align-items: $align;
+}
+@mixin justify-content($justify...) {
+	-webkit-justify-content: $justify;
+	justify-content: $justify;
+}
+@mixin flex-direction($flexDirection...) {
+	-webkit-flex-direction: $flexDirection;
+	flex-direction: $flexDirection;
+}
+@mixin flex-center() {
+	@include flexbox();
+	@include align-items(center);
+	@include justify-content(center);
+}
+@mixin inline-flex-center() {
+	@include inline-flex();
+	@include align-items(center);
+	@include justify-content(center);
+}
+@mixin flex-between() {
+	@include flexbox();
+	@include align-items(center);
+	@include justify-content(space-between);
+}
+@mixin inline-flex-between() {
+	@include inline-flexbox();
+	@include align-items(center);
+	@include justify-content(space-between);
+}
+
+//*** QUICK NAV ***/
+.quick-nav {
+	opacity: 0.25;
+	position: fixed;
+	z-index: 2;
+	right: 0;
+	top: 50%;
+	width: $element-height;
+	background: rgba(darken($blue1, 20%), 0.25);
+	@include border-radius(50px);
+	@include transform(50%);
+	@include flexbox();
+	@include flex-direction(column);
+	@include align-items(center);
+	@include transition($transition300);
+	&:hover {
+		opacity: 1;
+		@include transition($transition150);
+	}
+	@media #{$screen-mobile} {
+		display: none;
+	}
+
+	&-item {
+		position: relative;
+		height: $element-height;
+		width: $element-height;
+		margin-bottom: 5px;
+		color: white;
+		text-decoration: none;
+		@include border-radius(50%);
+		@include flex-center();
+		@include transition($transition300);
+		#{$rollover} {
+			text-decoration: none;
+			background: rgba(68, 67, 24, 0.5);
+			@include transition($transition150);
+			.quick-nav-title {
+				opacity: 1;
+				right: 40px;
+				@include transition($transition150);
+			}
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&-title {
+		display: block;
+		pointer-events: none;
+		opacity: 0;
+		font-size: 18px;
+		color: white;
+		// background: rgba($green1, 0.9);
+		text-align: right;
+		padding: 2px 12px;
+		position: absolute;
+		top: 50%;
+		right: 40px;
+		@include transform-all(translateY(-50%));
+		@include border-radius(0px);
+		@include transition($transition300);
+	}
+}
+
+//*** PAGE STYLES ***/
+body {
+
+}
+
+.container {
+	width: 100%;
+}
+.row {
+	height: 100vh;
+	@include flex-center();
+	@include flex-direction(column);
+	border-bottom: 1px solid white;
+}
+h1 {
+	color: #b3b3b3;
+	font-weight: 400;
+	position: relative;
+	text-decoration: none;
+	padding-bottom: 0px;
+	font-size: 42px;
+	@include flex-center();
+}
+	h4 {
+	color: #b3b3b3;
+	letter-spacing: 1.65px;
+	text-align: center;
+	font-weight: 400;
+	text-decoration: none;
+	font-size: 32px;
+}
+
+h3 {
+	color: #6e6e6e;
+	font-weight: 400;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+    font-size: 34px;
+	padding-bottom: 8px;
+	@include flex-center();
+}
+h4 {
+	color: #b3b3b3;
+	line-height: 2.5;
+	text-align: center;
+	font-weight: 400;
+	text-decoration: none;
+	font-size: 32px;
+}
+h5 {
+	color: #b3b3b3;
+	margin-top: 2em;
+	line-height: 1.6;
+	letter-spacing: 1.65px;
+	font-weight: 400;
+	font-size: 20px;
+	text-decoration: none;
+}
+p {
+	color: #b3b3b3;
+    text-align: justify;
+	font-weight: 400;
+	font-size: 16px;
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+	color: #6e6e6e;
+}

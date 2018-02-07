@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+html,
+body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  padding: 0px;
+  font-family: "Open Sans";
+}
+
+.wrap {
+  height: 100%;
+  overflow: hidden;
+}
+.wrap .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: auto;
+  left: auto;
+  z-index: -1;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/167792/mountains_copy.jpg") no-repeat center center;
+  /*     background-repeat,  background-position, background-size:  */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.quick-nav {
+  opacity: 0.25;
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  top: 50%;
+  width: 40px;
+  background: rgba(105, 105, 39, 0.25);
+  -ms-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -o-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -khtml-border-radius: 50px;
+  border-radius: 50px;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -webkit-flexbox;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  -khtml-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.quick-nav:hover {
+  opacity: 1;
+  -ms-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  -webkit-transition: all 150ms ease-in-out;
+  -khtml-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+@media only screen and (max-width: 767px) {
+  .quick-nav {
+    display: none;
+  }
+}
+.quick-nav-item {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 5px;
+  color: white;
+  text-decoration: none;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -webkit-flexbox;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  -khtml-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.quick-nav-item.active, .quick-nav-item:active, .quick-nav-item:hover, .quick-nav-item:focus {
+  text-decoration: none;
+  background: rgba(68, 67, 24, 0.5);
+  -ms-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  -webkit-transition: all 150ms ease-in-out;
+  -khtml-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.quick-nav-item.active .quick-nav-title, .quick-nav-item:active .quick-nav-title, .quick-nav-item:hover .quick-nav-title, .quick-nav-item:focus .quick-nav-title {
+  opacity: 1;
+  right: 40px;
+  -ms-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  -webkit-transition: all 150ms ease-in-out;
+  -khtml-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.quick-nav-item:last-child {
+  margin-bottom: 0;
+}
+.quick-nav-title {
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+  font-size: 18px;
+  color: white;
+  text-align: right;
+  padding: 2px 12px;
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -ms-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -o-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -khtml-border-radius: 0px;
+  border-radius: 0px;
+  -ms-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  -khtml-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.container {
+  width: 100%;
+}
+
+.row {
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -webkit-flexbox;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  border-bottom: 1px solid white;
+}
+
+h4 {
+  color: #b3b3b3;
+  letter-spacing: 1.65px;
+  text-align: center;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+h3 {
+  color: #6e6e6e;
+  font-weight: 400;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-size: 34px;
+  padding-bottom: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -webkit-flexbox;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+h4 {
+  color: #b3b3b3;
+  line-height: 2.5;
+  text-align: center;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+h5 {
+  color: #b3b3b3;
+  margin-top: 2em;
+  line-height: 1.6;
+  letter-spacing: 1.65px;
+  font-weight: 300;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+p {
+  color: #b3b3b3;
+  text-align: justify;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #6e6e6e;
+}

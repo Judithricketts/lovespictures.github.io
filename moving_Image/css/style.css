@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body {
+  background: #d9d9d9;
+  margin-top: 2em;
+
+}
+h4 {
+  color: #6e6e6e; 
+  margin-top: 4em;
+  position: absolute;
+  margin-left: 57px;
+  letter-spacing: 1.65px;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+.youtube_videos {  
+  position: relative;
+  margin-left: 20em;
+  
+  list-style: none;
+  display: block;
+  padding: 0;
+}
+.youtube_videos .youtube {
+  display: inline-block;
+  margin-bottom: 1em;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  margin-top: 0;
+}
+.youtube,
+.thumb {
+  width: 540px;
+  height: 350px;
+  cursor: pointer;
+  position: relative;
+}
+.youtube_video {
+  width: 540px;
+  height: 350px;
+}
+.thumb,
+.youtube_video {
+  padding: 0px;
+/*   background: #ffff; */
+}
+.youtube:after {
+  content: "play";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 540px;
+  height: 350px;
+  background: rgba(190, 190, 190, 0.5);
+  text-align: center;
+  color: transparent;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+.youtube:hover:after {
+  position: absoliute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  color: #ecf0f1;
+}
+
+/* = Responsive comming soon :)
+---------------------------------*/
+/* Desktop */
+@media (min-width: 980px) {
+}
+/* Mobile */
+@media (max-width: 480px) {
+}
+/* Tablet */
+@media (max-width: 767px) {
+}
+@media (min-width: 768px) and (max-width: 1979px) {
+}
+/* Justification */
